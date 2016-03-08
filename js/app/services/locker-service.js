@@ -26,9 +26,6 @@
       getLockers: function(){
         return lockers;
       },
-      getSizeMap: function(){
-        return SIZE_MAP;
-      },
       getNextAvailableLocker: function(size){
         var lockers = this.getLockers();
         for(var i = size; i < 3; i++){

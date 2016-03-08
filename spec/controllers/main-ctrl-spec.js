@@ -3,15 +3,15 @@
     var scope, controller, service, win;
 
     beforeEach(module('VegasLocker3000'));
-    beforeEach(inject(function($rootScope, $controller, $q, LockerService, $window){
+    beforeEach(inject(function($rootScope, $controller, LockerService, $window){
       scope = $rootScope.$new();
       win   = $window;
       spyOn(win, 'alert').and.stub();
-      service = LockerService;
-      controller  = $controller('MainCtrl', {
-        '$scope': scope,
-        LockerService:  service,
-        '$window': win
+      service    = LockerService;
+      controller = $controller('MainCtrl', {
+        '$scope':      scope,
+        LockerService: service,
+        '$window':     win
       });
     }));
 
