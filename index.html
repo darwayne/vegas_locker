@@ -1,0 +1,51 @@
+<!Doctype html>
+<html ng-app='VegasLocker3000'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+    <title>Vegas Locker 3000</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'/>
+  </head>
+
+  <body>
+    <div class='container' ng-controller='MainCtrl'>
+      <div class='row'>
+        <div class='col-md-12'>
+          <h2>Vegas Locker 3000</h2>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-6'>
+          <div class='btn-group' role='group'>
+            <button ng-click='setNewBagSize(0)' uib-popover-template='"customer-info"' popover-trigger='outsideClick' popover-placement='bottom' type='button'  class='btn btn-default'>Add Small Bag</button>
+            <button ng-click='setNewBagSize(1)' uib-popover-template='"customer-info"' popover-trigger='outsideClick' popover-placement='bottom' type='button' class='btn btn-default'>Add Medium Bag</button>
+            <button ng-click='setNewBagSize(2)' uib-popover-template='"customer-info"' popover-trigger='outsideClick' popover-placement='bottom-right' type='button' class='btn btn-default'>Add Large Bag</button>
+          </div>
+
+        </div>
+        <div class='col-md-6'>
+          <div class='input-group'>
+            <input ng-model='info.ticket' type='text' class='form-control' placeholder='Enter Ticket'/>
+            <span class='input-group-btn'>
+              <button ng-click='retrieveBag()' class='btn btn-primary'>Retrieve Bag</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap-tpls.min.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/lodash/4.6.1/lodash.js'></script>
+    <script type='text/javascript' src='js/app.js'></script>
+    <script type='text/javascript' src='js/app/services/locker-service.js'></script>
+    <script type='text/javascript' src='js/app/controllers/main-ctrl.js'></script>
+    <script type='text/ng-template' id='customer-info'>
+      <div class="form-group">
+        <input type="text" placeholder='Customer Name' ng-model="info.customer_name" class="form-control">
+      </div>
+      <button type='button' ng-click='addBag()' class='btn btn-primary pull-right'>Add Bag</button>
+    </script>
+  </body>
+</html>
