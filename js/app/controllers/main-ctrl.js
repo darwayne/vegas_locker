@@ -8,7 +8,6 @@
       newBagSize: 0,
       setNewBagSize: function(size){
         $scope.newBagSize = size;
-        console.log('bag size set to ', size);
       },
       addBag: function(){
         var info                  = LockerService.addBag($scope.newBagSize, {name: $scope.info.customer_name});
@@ -26,10 +25,14 @@
       },
       retrieveBag: function(){
         var ticket         = $scope.info.ticket;
-        $scope.info.ticket = '';
         var bag_info       = LockerService.getBag(ticket);
         if(bag_info){
+          $scope.info.ticket = '';
           $window.alert(bag_info.size + ' retrieved for ' + bag_info.info.name);
+        }
+        else
+        {
+          $window.alert($scope.info.ticket + ' not found');
         }
       }
     });

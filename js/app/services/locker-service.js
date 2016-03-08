@@ -1,6 +1,6 @@
 ;(function(app){
   app.service('LockerService', function(){
-    var MAX_LOCKER_SIZE = 2;
+    var MAX_LOCKER_SIZE = 1000;
     var lockers         = {
       small: {
         slots:       new Array(MAX_LOCKER_SIZE),
